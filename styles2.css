@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Rest of your CSS */
+
+header {
+    background-color: #333;
+    color: white;
+    /* transition: color 0.2s; */
+    padding: 1rem;
+}
+a {
+    margin: 20px;
+    -webkit-transition: color 1s; /* For Safari 3.0 to 6.0 */
+    transition: color 1s; /* For modern browsers */
+}
+a:hover {
+    color: #58a3fa;
+}
+
+
+
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.proj{
+    cursor: pointer;
+    
+}
