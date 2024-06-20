@@ -1,0 +1,93 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set box-sizing to border-box for all elements */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Use a web-safe font or import Google Fonts */
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #333; /* Dark text color */
+}
+
+/* Container styles */
+.container {
+  max-width: 1200px; /* Limit width for content */
+  margin: 0 auto; /* Center content horizontally */
+  padding: 20px; /* Add padding around content */
+}
+
+/* Header styles */
+.header {
+  background-color: #343a40; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 20px; /* Add padding to header */
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* Navigation styles */
+.navbar {
+  background-color: #212529; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 10px 0; /* Add padding to top and bottom */
+}
+
+.navbar ul {
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Display navigation items horizontally */
+}
+
+.navbar li {
+  margin-right: 20px; /* Add margin between navigation items */
+}
+
+.navbar a {
+  color: #fff; /* Light text color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.navbar a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 8px 16px;
+  border-bottom: 1px solid #dee2e6; /* Light border color */
+}
+
+.table th {
+  background-color: #343a40; /* Dark header background color */
+  color: #fff; /* Light text color */
+  text-align: left; /* Align text to the left */
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px; /* Add margin between form elements */
+}
+
+/* Footer styles */
+.footer {
+  background-color: #343a40; /* Dark background color */
+  color: #fff; /* Light text color */
+  padding: 20px; /* Add padding to footer */
+  text-align: center; /* Align text to the center */
+}
