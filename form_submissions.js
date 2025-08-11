@@ -1,25 +1,51 @@
-$(document).ready(function(){
-    $('#contactForm').submit(function(event) {
-        event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
 
-        var formData = {
-            name: $("input[name=name]").val(),
-            email: $("input[name=email]").val(),
-            subject: $("input[name=subject]").val(),
-            content: $("textarea[name=message]").val()
-        };
-
-        $.ajax({
-            url: "https://localhost:44303/api/formsubmission",
-            type: "POST",
-            data: JSON.stringify(formData),
-            contentType: "application/json",
-            success: function(response) {
-                alert("Form submitted successfully: " + response);
-            },
-            error: function(xhr, status, error) {
-                alert("Form submission failed: " + xhr.responseText);
-            }
-        });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    // Show loading alert instantly
+    Swal.fire({
+        title: "Sending...",
+        text: "Please wait while we process your message.",
+        allowOutsideClick: false,
+        didOpen: () => Swal.showLoading(),
     });
+
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    };
+
+    try {
+      const res = await fetch("https://contactapi-ywrt.onrender.com/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent",
+          text: "Thanks for contacting me! I will get back to you soon.",
+        });
+        form.reset();
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops!",
+          text: "Something went wrong. Please try again later.",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Network Error",
+        text: "Please check your internet connection and try again.",
+      });
+    }
+  });
 });

@@ -37,36 +37,36 @@ $(document).ready(function(){
     new Typed(".typing", options);
     new Typed(".typing-2", options);
 
-    var submitted = false;
+    // var submitted = false;
 
-    $('#contactForm').on('submit', function(e) {
-        e.preventDefault();
+    // $('#contactForm').on('submit', function(e) {
+    //     e.preventDefault();
 
-        if (submitted) return;
+    //     if (submitted) return;
 
-        var formData = $(this).serialize();
-        $.ajax({
-            url: 'https://docs.google.com/forms/d/e/1FAIpQLSdYr0_QaM7vCIGAaHSSsg27NUXcPR-vC_eBwKMw1B7UYgDCFA/formResponse',
-            type: 'POST',
-            data: formData,
-            success: function() {
-                Swal.fire(
-                    'Success!',
-                    'Your response has been submitted.',
-                    'success'
-                );
-                $('#contactForm')[0].reset();
-                submitted = true;
-            },
-            error: function() {
-                Swal.fire(
-                    'OOPS!',
-                    'Unfortunately This Service has not been started yet,Instead Call or Text me (+918010089662).',
-                    'error'
-                );
-            }
-        });
-    });
+    //     var formData = $(this).serialize();
+    //     $.ajax({
+    //         url: 'https://docs.google.com/forms/d/e/1FAIpQLSdYr0_QaM7vCIGAaHSSsg27NUXcPR-vC_eBwKMw1B7UYgDCFA/formResponse',
+    //         type: 'POST',
+    //         data: formData,
+    //         success: function() {
+    //             Swal.fire(
+    //                 'Success!',
+    //                 'Your response has been submitted.',
+    //                 'success'
+    //             );
+    //             $('#contactForm')[0].reset();
+    //             submitted = true;
+    //         },
+    //         error: function() {
+    //             Swal.fire(
+    //                 'OOPS!',
+    //                 'Unfortunately This Service has not been started yet,Instead Call or Text me (+918010089662).',
+    //                 'error'
+    //             );
+    //         }
+    //     });
+    //});
 });
 
 
